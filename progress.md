@@ -1,6 +1,6 @@
 # 📅 2-Week Coding + PEP 8 Practice Tracker
 
-✅ Daily Routine
+## ✅ Daily Routine
 	•	Code today’s task(s)
 	•	Run black (auto-format)
 	•	Run flake8 (lint check)
