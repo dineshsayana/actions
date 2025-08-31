@@ -17,3 +17,12 @@ The goal is to improve coding skills, write Pythonic code, and strictly follow *
    ```bash
    git clone https://github.com/YOUR_USERNAME/coding-practice-pep8.git
    cd coding-practice-pep8
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+3.	Run formatters & linters:
+   ```bash
+   black .
+   flake8 .
+   isort .
+   pylint week1/day1_prime.py
