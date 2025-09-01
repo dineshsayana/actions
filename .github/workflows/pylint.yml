@@ -21,15 +21,12 @@ jobs:
         python3 -m pip install --upgrade pip
         pip3 install pylint
         
-    - name: Get non-empty Python files
-      id: get_py_files
-      run: |
-        # Use find to list all non-empty .py files and store them
-        py_files=$(find . -name "*.py" -size +0c)
-        echo "files=$py_files" >> $GITHUB_OUTPUT
-   
     - name: Run Pylint on non-empty files
-      if: ${{ steps.get_py_files.outputs.files != '' }}
       run: |
-        pylint ${{ steps.get_py_files.outputs.files }}
+        py_files=$(find . -name "*.py" -size +0c)
+        if [ -n "$py_files" ]; then
+          pylint $py_files
+        else
+          echo "No Python files found."
+        fi
         
