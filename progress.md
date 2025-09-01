@@ -12,7 +12,7 @@
 
 ## Week 1 – Foundations + PEP 8 Habits
 
-### Day 1 – Setup & PEP 8 Basics
+### Day 1 – Setup & PEP 8 Basics ✅
 	•	Install tools: black, flake8, isort, pylint
 	•	Practice formatting a messy script with black
 	•	Function: check if number is prime
