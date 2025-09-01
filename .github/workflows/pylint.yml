@@ -15,10 +15,21 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+        
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
         pip3 install pylint
-    - name: Analysing the code with pylint
+        
+    - name: Get non-empty Python files
+      id: get_py_files
       run: |
-        pylint $(git ls-files '*.py')
+        # Use find to list all non-empty .py files and store them
+        py_files=$(find . -name "*.py" -size +0c)
+        echo "files=$py_files" >> $GITHUB_OUTPUT
+   
+    - name: Run Pylint on non-empty files
+      if: ${{ steps.get_py_files.outputs.files != '' }}
+      run: |
+        pylint ${{ steps.get_py_files.outputs.files }}
+        
