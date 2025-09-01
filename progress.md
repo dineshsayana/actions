@@ -17,7 +17,7 @@
 	•	Practice formatting a messy script with black
 	•	Function: check if number is prime
 
-### Day 2 – Variables & Functions
+### Day 2 – Variables & Functions ✅
 	•	Review naming conventions (snake_case, CamelCase, UPPER_CASE)
 	•	Function: factorial (iterative + recursive)
 	•	Add docstrings + type hints
