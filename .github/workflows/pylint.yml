@@ -25,6 +25,8 @@ jobs:
       run: |
         py_files=$(find . -name "*.py" -exec grep -l '[^[:space:]]' {} \;)
         if [ -n "$py_files" ]; then
+          echo "Running Pylint on these files:"
+          echo "$py_files"
           pylint $py_files
         else
           echo "No Python files found."
