@@ -23,10 +23,9 @@ jobs:
         
     - name: Run Pylint on non-empty files
       run: |
-        py_files=$(find . -name "*.py" -size +0c)
+        py_files=$(find . -name "*.py" -exec grep -l '[^[:space:]]' {} \;)
         if [ -n "$py_files" ]; then
           pylint $py_files
         else
           echo "No Python files found."
         fi
-        
