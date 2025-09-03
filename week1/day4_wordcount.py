@@ -23,5 +23,6 @@ def word_count(text: str) -> dict:
     return word_freq
 
 
-sample_text = "Hello, world! Hello everyone. Welcome to the world of Python. Python is great, and the world is beautiful."
-print(word_count(sample_text))
+SAMPLE_TEXT = "Hello, world! Hello everyone. Welcome to the world of Python. Python is great," \
+" and the world is beautiful."
+print(word_count(SAMPLE_TEXT))
